@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>IoT Dashboard</title>
+</head>
+<body>
+  <h1>IoT Dashboard</h1>
+  <p>Dane wysyłane są co 15 sekund. Proszę czekać...</p>
+  <ul id="sensorDataList"></ul>
+  
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io("http://localhost:3100");
+
+    socket.on("connect", () => {
+      console.log("Połączono z WebSocketem!");
+    });
+
+    socket.on("sensor-data", (data) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `Temperatura: ${data.temperature}°C | Wilgotność powietrza: ${data.humidity}% | Ciśnienie: ${data.pressure} hPa`;
+      document.getElementById("sensorDataList").appendChild(listItem);
+    });
+
+    socket.on("disconnect", () => {
+      console.log("Rozłączono z WebSocketem.");
+    });
+  </script>
+</body>
+</html>

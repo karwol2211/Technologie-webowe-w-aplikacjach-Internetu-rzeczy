@@ -1,0 +1,39 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "private": "true",
+  "dependencies": {
+    "@types/socket.io": "^3.0.1",
+    "body-parser": "1.20.1",
+    "chart.js": "^4.4.9",
+    "cors": "^2.8.5",
+    "ejs": "3.1.8",
+    "express": "^4.21.2",
+    "graphql": "16.6.0",
+    "graphql-request": "5.0.0",
+    "joi": "^17.12.2",
+    "mongoose": "^8.2.1",
+    "morgan": "1.10.0",
+    "react": "^19.1.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^19.1.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.13.11",
+    "node-gyp": "11.1.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "5.8.2"
+  },
+  "scripts": {
+    "dev": "ts-node ./lib/index.ts",
+    "watch": "nodemon",
+    "start": "ts-node ./lib/index.ts",
+    "build": "tsc"
+  }
+}
