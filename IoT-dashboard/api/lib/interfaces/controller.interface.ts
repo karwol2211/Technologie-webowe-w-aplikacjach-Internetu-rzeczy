@@ -1,6 +1,6 @@
-import { Router } from 'express';
+import  {Router} from 'express';
 
-interface Controller {
+interface  Controller{
     path: string;
     router: Router;
 }

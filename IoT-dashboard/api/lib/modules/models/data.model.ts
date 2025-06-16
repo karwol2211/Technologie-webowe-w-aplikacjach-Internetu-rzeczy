@@ -2,12 +2,10 @@ export interface IData {
     temperature: number;
     pressure: number;
     humidity: number;
-    deviceId: number;
+    deviceId: string;
     readingDate?: Date;
- }
- 
- 
- export type Query<T> = {
+}
+
+export type Query<T> = {
     [key: string]: T;
- };
- 
+};

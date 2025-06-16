@@ -1,12 +1,7 @@
 import App from './app';
-import { ItemController } from './controllers/item.controller';
-import IndexController from "./controllers/index.controller";
-import DataController from "./controllers/DataController";
+import { createControllers } from './factories/controllerFactory';
 
-const app: App = new App([
-   new DataController(),
-   new ItemController(),
-   new IndexController()
-]);
-
+const controllers = createControllers();
+const app = new App(controllers);
 app.listen();
+
